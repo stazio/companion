@@ -1,0 +1,7 @@
+version: "3"
+services:
+  companion:
+    restart: unless-stopped # the most important line for this post
+    build: .
+    ports:
+        - 8000:8000
