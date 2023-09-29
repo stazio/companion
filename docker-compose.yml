@@ -2,6 +2,14 @@ version: "3"
 services:
   companion:
     restart: unless-stopped # the most important line for this post
-    build: .
+    privileged: true
+    #build: .
+    image: stazthebox/companion:bitfire-latest
+    user: root:root
     ports:
         - 8000:8000
+    volumes:
+        - companion-data:/companion/v3.0
+
+volumes:
+  companion-data:
